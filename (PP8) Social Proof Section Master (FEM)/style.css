@@ -1,0 +1,374 @@
+/* General rules */
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "League Spartan", sans-serif;
+}
+
+body, html
+{
+    height: 100%;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1
+{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: hsl(300, 43%, 22%);
+}
+
+/* Outer Content */
+@media only screen and (min-width: 630px)
+{
+    .overbox
+    {
+        display: grid;
+        grid-template-areas: "top" 
+                            "bottom";
+        grid-template-rows: 1fr 1fr;
+        width: 950px;
+        row-gap: 35px;
+        margin-bottom: 20px;
+    }
+
+    .topsec
+    {
+        grid-area: top;
+        display: grid;
+        grid-template-areas: "left right";
+        grid-template-columns: 10fr 13fr;
+        column-gap: 100px;
+    }
+
+    .bottomsec
+    {
+        display: grid;
+        grid-template: repeat(17, 1fr) / repeat(3, 1fr);
+        column-gap: 25px;
+        min-height: 240px;
+    }
+
+    /* Inner Content */
+
+    /* sec1 */
+
+    .sec1
+    {
+        grid-area: left;
+    }
+
+    .sec1 p
+    {
+        color: hsl(303, 10%, 53%);
+        font-size: 15px;
+        line-height: 1.25em;
+    }
+
+    /* sec2 */
+
+    .sec2
+    {
+        grid-area: right;
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(10, 1fr);
+        row-gap: 20px;
+        height: 160px;
+        align-self: center;
+    }
+
+    .sec2 div
+    {
+        background-color: hsl(300, 24%, 96%);
+        border-radius: 5px;
+        display: flex;
+        font-size: 13px;
+        font-weight: 700;
+        color:hsl(300, 43%, 22%);
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .reviews
+    {
+        grid-area: 1 / 1 / span 1 / span 8;
+    }
+
+    .report
+    {
+        grid-area: 2 / 2 / span 1 / span 8;
+    }
+
+    .best
+    {
+        grid-area: 3 / 3 / span 1 / span 8;
+    }
+
+    .star
+    {
+        height: 16px;
+        width: 16px;
+        margin-right: 5px;
+        background: url('images/icon-star.svg') no-repeat;
+    }
+
+    /* bottom */
+
+    .card1, .card2, .card3
+    {
+        padding: 25px;
+        background-color: hsl(300, 43%, 22%);
+        color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .card1
+    {
+        grid-area: 1 / 1 / span 15 / span 1;
+    }
+
+    .card2
+    {
+        grid-area: 2 / 2 / span 15 / span 1;
+    }
+
+    .card3
+    {
+        grid-area: 3 / 3 / span 15 / span 1;
+    }
+
+    .bottomsec img
+    {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 18px;
+    }
+
+    .cardid
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .titles
+    {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        line-height: 1.1em;
+    }
+
+    .title
+    {
+        color: hsl(333, 80%, 67%);
+    }
+
+    .bottomsec div p
+    {
+        line-height: 1.3em;
+        font-size: 13px;
+    }
+}
+
+/* Responsive Rules */
+
+@media only screen and (max-width: 630px)
+{
+    .attribution
+    {
+        display: none;
+    }
+
+    body, html
+    {
+        height: auto;
+    }
+
+    body
+    {
+        padding: 100px 10%;
+    }
+
+    .overbox
+    {
+        display: grid;
+        width: auto;
+        grid-template-areas: "top"
+                             "bottom";
+        row-gap: 50px;
+        grid-template-rows: 500px 1fr;
+    }
+
+    .topsec
+    {
+        display: grid;
+        grid-template-areas: "top"
+                             "bottom";
+        grid-area: top;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .sec1
+    {
+        grid-area: top;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sec1 p
+    {
+        color: hsl(303, 10%, 53%);
+        font-size: 15px;
+        line-height: 1.25em;
+    }
+
+    .sec2
+    {
+        display: grid;
+        grid-template-areas: "top"
+                             "mid"
+                             "bottom";
+        grid-area: bottom;
+        grid-template-columns: 1fr;
+        width: 100%;
+        row-gap: 15px;
+    }
+
+    .reviews
+    {
+        grid-area: top;
+    }
+
+    .report
+    {
+        grid-area: mid;
+    }
+
+    .best
+    {
+        grid-area: bottom;
+    }
+
+    .bottomsec
+    {
+        display: grid;
+        grid-template-areas: "top"
+                             "mid"
+                             "bottom";
+        min-height: auto;
+        grid-area: bottom;
+        row-gap: 10px;
+    }
+
+    .card1
+    {
+        grid-area: top;
+    }
+
+    .card2
+    {
+        grid-area: mid;
+    }
+
+    .card3
+    {
+        grid-area: bottom;
+    }
+    
+    .bottomsec img
+    {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 18px;
+    }
+
+    .cardid
+    {
+        display: flex;
+        align-items: center;
+    }
+
+    .titles
+    {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        line-height: 1.1em;
+    }
+
+    .title
+    {
+        color: hsl(333, 80%, 67%);
+    }
+
+    .bottomsec div p
+    {
+        line-height: 1.3em;
+        font-size: 15px;
+    }
+
+    .fivestar 
+    {
+        display: flex;
+        justify-content: space-between;
+        width: 105px;
+    }
+
+    .star 
+    {
+        width: 16px;
+        height: 16px;
+        background: url('images/icon-star.svg') no-repeat;
+        background-size: contain;
+    }
+
+    .reviews, .report, .best
+    {
+        background-color: hsl(300, 24%, 96%);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        font-size: 13px;
+        font-weight: 700;
+        color:hsl(300, 43%, 22%);
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+        height: 70px;
+    }
+
+    .card1, .card2, .card3
+    {
+        padding: 25px;
+        background-color: hsl(300, 43%, 22%);
+        color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 200px;
+    }
+
+    .rating
+    {
+        font-size: 14px;
+    }
+}
